@@ -1,0 +1,14 @@
+{
+  "name": "@koishi-plugin-stream-notify/database",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "packageManager": "pnpm@10.17.1"
+}
