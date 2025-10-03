@@ -1,0 +1,8 @@
+{
+  "name": "@koishi-plugin-stream-notify/command",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "packageManager": "pnpm@10.17.1"
+}

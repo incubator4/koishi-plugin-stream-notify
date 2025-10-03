@@ -26,3 +26,5 @@ export interface LiveEndEvent {
 }
 
 export interface DynamicEvent {}
+
+export default {};

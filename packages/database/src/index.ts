@@ -1,15 +1,16 @@
-import type { Context } from "koishi";
-
-export const STREAM_NOTIFY_NOTIFICATIONS = "stream-notify.notifications";
-export const STREAM_NOTIFY_FEEDS = "stream-notify.feeds";
-export const STREAM_NOTIFY_SUBSCRIPTION = "stream-notify.subscription";
+import type { Command, Context } from "koishi";
+import {
+  TABLE_STREAM_NOTIFY_NOTIFICATIONS,
+  TABLE_STREAM_NOTIFY_FEEDS,
+  TABLE_STREAM_NOTIFY_SUBSCRIPTION,
+} from "@koishi-plugin-stream-notify/constrant";
 
 declare module "koishi" {
   interface Tables {
-    "stream-notify.notifications": Notification;
+    [TABLE_STREAM_NOTIFY_NOTIFICATIONS]: Notification;
     // "stream-notify.sources": Source;
-    "stream-notify.feeds": {};
-    "stream-notify.subscription": Subscription;
+    [TABLE_STREAM_NOTIFY_FEEDS]: {};
+    [TABLE_STREAM_NOTIFY_SUBSCRIPTION]: Subscription;
   }
 
   interface Database {
@@ -37,14 +38,13 @@ export interface Subscription {
 
 export const name = "Database";
 
-export const apply = (
-  ctx: Context,
-  config: {
-    cmd: string;
-  }
-) => {
+export interface Config {
+  cmd: Command;
+}
+
+export const apply = (ctx: Context, config: Config) => {
   ctx.model.extend(
-    STREAM_NOTIFY_NOTIFICATIONS,
+    TABLE_STREAM_NOTIFY_NOTIFICATIONS,
     {
       id: "integer",
       platform: "string",
@@ -61,7 +61,7 @@ export const apply = (
     console.log("createFeed called");
   };
 
-  const streamNotifyCmd = ctx.command(config.cmd);
+  const streamNotifyCmd = config.cmd;
 
   streamNotifyCmd.subcommand(".db", "数据库管理").action(() => {
     return "数据库管理";
