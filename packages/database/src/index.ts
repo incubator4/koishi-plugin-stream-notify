@@ -37,7 +37,12 @@ export interface Subscription {
 
 export const name = "Database";
 
-export const apply = (ctx: Context) => {
+export const apply = (
+  ctx: Context,
+  config: {
+    cmd: string;
+  }
+) => {
   ctx.model.extend(
     STREAM_NOTIFY_NOTIFICATIONS,
     {
@@ -49,6 +54,18 @@ export const apply = (ctx: Context) => {
       autoInc: true,
     }
   );
+
+  // 实现 createFeed 方法
+  ctx.database.createFeed = () => {
+    // 这里可以添加创建 feed 的逻辑
+    console.log("createFeed called");
+  };
+
+  const streamNotifyCmd = ctx.command(config.cmd);
+
+  streamNotifyCmd.subcommand(".db", "数据库管理").action(() => {
+    return "数据库管理";
+  });
 };
 
 export default {

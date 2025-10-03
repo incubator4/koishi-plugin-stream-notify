@@ -1,14 +1,12 @@
 {
   "name": "@koishi-plugin-stream-notify/core",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "dependencies": {
+    "@koishi-plugin-stream-notify/database": "workspace:*",
+    "@koishi-plugin-stream-notify/event": "workspace:*"
   },
-  "keywords": [],
-  "author": "",
-  "packageManager": "pnpm@10.17.1",
-  "devDependencies": {}
+  "peerDependencies": {
+    "koishi": "^4.18.7"
+  }
 }

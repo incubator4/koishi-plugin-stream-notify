@@ -3,8 +3,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "*": ["packages/*/src", "libs/*/src"],
-      "koishi-plugin-stream-notify": ["packages/core/src"]
+      "koishi-plugin-stream-notify": [
+        "packages/koishi-plugin-stream-notify/src"
+      ],
+      "koishi-plugin-*": ["packages/*/src"],
+      "*": ["packages/*/src"]
     }
   }
 }

@@ -1,14 +1,8 @@
 plugins:
-  proxy-agent:7epc5d: {}
-  http:9rn1z4: {}
-  proxy-agent:y900nv: {}
-  http:jqq4jl: {}
   group:server:
     server:8z8i5m:
       port: 5140
       maxPort: 5149
-    ~server-satori:u5hy4u: {}
-    ~server-temp:dkcjqn: {}
   group:basic:
     $collapsed: true
     ~admin:d1e1wk: {}
@@ -20,8 +14,8 @@ plugins:
     locales:j65oec: {}
     proxy-agent:of4iqc: {}
     rate-limit:f7gavv: {}
-    telemetry:wfw3rr: {}
   group:console:
+    $collapsed: true
     actions:cb53q4: {}
     analytics:5rgmru: {}
     android:60tfsn:
@@ -36,6 +30,9 @@ plugins:
     explorer:uqdvtr: {}
     logger:v6e225: {}
     insight:taxk6x: {}
+    market:fhzvim:
+      search:
+        endpoint: https://registry.koishi.chat/index.json
     notifier:3evmqt: {}
     oobe:9b287k: {}
     sandbox:l389qz: {}
@@ -50,7 +47,6 @@ plugins:
       database: koishi
     database-sqlite:e4gl21:
       path: data/koishi.db
-    assets-local:5x6jew: {}
   group:adapter:
     ~adapter-dingtalk:se6e92: {}
     ~adapter-discord:kb30xp: {}
@@ -71,5 +67,4 @@ plugins:
     $if: env.NODE_ENV === 'development'
     hmr:5q7lsj:
       root: .
-    example:0wgf6t: {}
     stream-notify:jptn5z: {}
