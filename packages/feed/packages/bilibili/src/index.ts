@@ -9,12 +9,15 @@ export interface Config {
   cmd: Command;
 }
 
-export const name = "bilibili";
+export const name = "stream-notify-feed-bilibili";
 
 export const apply = (ctx: Context, config: Config) => {
   const listener: Record<string, MessageListener> = {};
+  const logger = ctx.logger(name);
 
-  ctx.on("ready", () => {});
+  ctx.on("ready", () => {
+    logger.info("Bilibili feed ready");
+  });
 
   ctx.on("dispose", () => {
     // close all listener

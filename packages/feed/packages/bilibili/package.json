@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "packageManager": "pnpm@10.17.1",
   "dependencies": {
-    "blive-message-listener": "^0.5.1"
+    "blive-message-listener": "^0.5.1",
+    "tough-cookie": "^5.1.2",
+    "cron": "^4.3.3"
   }
 }
