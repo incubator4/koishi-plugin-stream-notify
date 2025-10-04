@@ -1,6 +1,9 @@
 import { type Context, Schema } from "koishi";
 import Database from "@koishi-plugin-stream-notify/database";
 import Cmd from "@koishi-plugin-stream-notify/command";
+import Feed from "@koishi-plugin-stream-notify/feed";
+import {} from "@koishi-plugin-stream-notify/event";
+import { EVENT_STREAM_NOTIFY_LIVE_START } from "@koishi-plugin-stream-notify/constrant";
 
 export const name = "stream-notify";
 
@@ -25,8 +28,9 @@ export const apply = (ctx: Context, config: Config) => {
 
   ctx.plugin(Database, { cmd });
   ctx.plugin(Cmd, { cmd });
+  ctx.plugin(Feed, { cmd });
 
-  ctx.on("stream-notify/live-start", (event) => {
+  ctx.on(EVENT_STREAM_NOTIFY_LIVE_START, (event) => {
     console.log("stream-notify/live-start");
     console.log(event);
   });

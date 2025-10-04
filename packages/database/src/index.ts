@@ -57,8 +57,7 @@ export const apply = (ctx: Context, config: Config) => {
 
   // 实现 createFeed 方法
   ctx.database.createFeed = () => {
-    // 这里可以添加创建 feed 的逻辑
-    console.log("createFeed called");
+    ctx.database.create(TABLE_STREAM_NOTIFY_FEEDS, {});
   };
 
   const streamNotifyCmd = config.cmd;

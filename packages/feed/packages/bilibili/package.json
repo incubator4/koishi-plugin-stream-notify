@@ -1,0 +1,8 @@
+{
+  "name": "@koishi-plugin-stream-notify/feed-bilibili",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.17.1",
+  "dependencies": {
+    "blive-message-listener": "^0.5.1"
+  }
+}

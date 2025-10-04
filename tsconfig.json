@@ -8,6 +8,7 @@
       ],
       "koishi-plugin-*": ["packages/*/src"],
       "@koishi-plugin-stream-notify/*": ["packages/*/src"],
+      "@koishi-plugin-stream-notify/feed-*": ["packages/feed/packages/*/src"],
       "*": ["packages/*/src"]
     }
   }

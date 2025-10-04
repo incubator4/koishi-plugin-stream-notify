@@ -1,15 +1,20 @@
 import type { Context } from "koishi";
+import {
+  EVENT_STREAM_NOTIFY_LIVE_START,
+  EVENT_STREAM_NOTIFY_LIVE_END,
+  EVENT_STREAM_NOTIFY_DYNAMIC,
+} from "@koishi-plugin-stream-notify/constrant";
 
 declare module "koishi" {
   interface Events {
     // Live start
-    "stream-notify/live-start"(event: LiveStartEvent): void;
+    [EVENT_STREAM_NOTIFY_LIVE_START](event: LiveStartEvent): void;
 
     // Live end
-    "stream-notify/live-end"(): void;
+    [EVENT_STREAM_NOTIFY_LIVE_END](): void;
 
     // Dynamic
-    "stream-notify/dynamic"(): void;
+    [EVENT_STREAM_NOTIFY_DYNAMIC](): void;
   }
 }
 
