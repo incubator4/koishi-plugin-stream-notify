@@ -59,12 +59,6 @@ export const apply = (ctx: Context, config: Config) => {
   ctx.database.createFeed = () => {
     ctx.database.create(TABLE_STREAM_NOTIFY_FEEDS, {});
   };
-
-  const streamNotifyCmd = config.cmd;
-
-  streamNotifyCmd.subcommand(".db", "数据库管理").action(() => {
-    return "数据库管理";
-  });
 };
 
 export default {

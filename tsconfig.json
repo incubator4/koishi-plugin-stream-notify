@@ -5,7 +5,8 @@
     "paths": {
       "@stream-notify/koishi-plugin-*": ["plugins/*/src"],
       "@stream-notify/*": ["packages/*/src"],
-      "*": ["packages/*/src"]
+      "*": ["packages/*/src"],
+      "locales/*": ["locales/*"]
     }
   }
 }

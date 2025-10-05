@@ -1,5 +1,8 @@
 import { type Context, Command } from "koishi";
-import { TABLE_STREAM_NOTIFY_NOTIFICATIONS } from "@stream-notify/constrant";
+import {
+  TABLE_STREAM_NOTIFY_NOTIFICATIONS,
+  EVENT_STREAM_NOTIFY_LIVE_START,
+} from "@stream-notify/constrant";
 
 export interface Config {
   cmd: Command;
@@ -30,14 +33,18 @@ export const apply = (ctx: Context, config: Config) => {
     session.send(`添加平台 ${platform}`);
   });
 
-  config.cmd.subcommand(".live-start").action(() => {
-    ctx.emit("stream-notify/live-start", {
-      title: "测试",
-      user_id: "123",
-      room_id: "123",
-      session_id: "123",
-      url: "https://www.baidu.com",
-    });
+  config.cmd.subcommand(".live-start").action(({ session }) => {
+    ctx
+      .parallel(EVENT_STREAM_NOTIFY_LIVE_START, {
+        title: "测试",
+        user_id: "123",
+        room_id: "123",
+        session_id: "123",
+        url: "https://www.baidu.com",
+      })
+      .then(() => {
+        session.send("发送成功");
+      });
   });
 
   config.cmd.subcommand(".jsx").action(({ session }) => {
