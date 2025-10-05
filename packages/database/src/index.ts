@@ -36,7 +36,7 @@ export interface Subscription {
   feed_id: string;
 }
 
-export const name = "Database";
+export const name = "stream-notify-database";
 
 export interface Config {
   cmd: Command;

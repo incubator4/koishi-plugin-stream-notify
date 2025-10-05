@@ -7,7 +7,10 @@ import { EVENT_STREAM_NOTIFY_LIVE_START } from "@koishi-plugin-stream-notify/con
 
 export const name = "stream-notify";
 
-export const inject = ["database"];
+export const inject = {
+  required: ["database", "cron"],
+  optional: ["server"],
+};
 
 export const usage = `
 # 直播通知
@@ -24,20 +27,21 @@ export const Config: Schema<Config> = Schema.object({});
 export const apply = (ctx: Context, config: Config) => {
   // ctx.i18n.define('en-US', require('./locales/en-US'))
   // ctx.i18n.define("zh-CN", require("./locales/zh-CN"))
+  const logger = ctx.logger(name);
+  let count = 0;
+
   let cmd = ctx.command("sn");
 
-  ctx.plugin(Database, { cmd });
-  ctx.plugin(Cmd, { cmd });
-  ctx.plugin(Feed, { cmd });
+  let _config = {
+    cmd,
+  };
+
+  ctx.plugin(Database, _config);
+  ctx.plugin(Cmd, _config);
+  ctx.plugin(Feed, _config);
 
   ctx.on(EVENT_STREAM_NOTIFY_LIVE_START, (event) => {
     console.log("stream-notify/live-start");
     console.log(event);
-  });
-
-  ctx.on("message", (session) => {
-    if (session.content === "123") {
-      session.send("456");
-    }
   });
 };

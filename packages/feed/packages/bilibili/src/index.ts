@@ -4,7 +4,8 @@ import {
   startListen,
   type MsgHandler,
 } from "blive-message-listener";
-
+import Api from "./api";
+import Jar from "./jar";
 export interface Config {
   cmd: Command;
 }
@@ -15,6 +16,9 @@ export const apply = (ctx: Context, config: Config) => {
   const listener: Record<string, MessageListener> = {};
   const logger = ctx.logger(name);
 
+  ctx.plugin(Jar);
+  ctx.plugin(Api);
+
   ctx.on("ready", () => {
     logger.info("Bilibili feed ready");
   });
@@ -23,6 +27,7 @@ export const apply = (ctx: Context, config: Config) => {
     // close all listener
     Object.values(listener).forEach((listener) => {
       listener.close();
+      delete listener[listener.roomId];
     });
   });
 };

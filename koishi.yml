@@ -1,5 +1,6 @@
 plugins:
   group:server:
+    $collapsed: true
     server:8z8i5m:
       port: 5140
       maxPort: 5149
@@ -28,7 +29,8 @@ plugins:
     desktop:4n8jtj:
       $if: env.KOISHI_AGENT?.includes('Desktop')
     explorer:uqdvtr: {}
-    logger:v6e225: {}
+    logger:v6e225:
+      levels: 1
     insight:taxk6x: {}
     market:fhzvim:
       search:
@@ -39,6 +41,7 @@ plugins:
     status:7im5cc: {}
     theme-vanilla:o0ttco: {}
   group:storage:
+    $collapsed: true
     ~database-mongo:tx4pj4:
       database: koishi
     ~database-mysql:yh8t2k:
@@ -48,6 +51,7 @@ plugins:
     database-sqlite:e4gl21:
       path: data/koishi.db
   group:adapter:
+    $collapsed: true
     ~adapter-dingtalk:se6e92: {}
     ~adapter-discord:kb30xp: {}
     ~adapter-kook:df54ff: {}
@@ -67,4 +71,5 @@ plugins:
     $if: env.NODE_ENV === 'development'
     hmr:5q7lsj:
       root: .
+    cron:u460sl: {}
     stream-notify:jptn5z: {}

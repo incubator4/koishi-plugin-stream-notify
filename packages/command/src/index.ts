@@ -5,7 +5,9 @@ export interface Config {
   cmd: Command;
 }
 
-export const name = "command";
+export const name = "stream-notify-command";
+
+// export const inject = ["stream-notify-database"];
 
 export const apply = (ctx: Context, config: Config) => {
   config.cmd.subcommand(".platform").action(({ session }) => {
@@ -41,5 +43,6 @@ export const apply = (ctx: Context, config: Config) => {
 
 export default {
   name,
+  // inject,
   apply,
 };
