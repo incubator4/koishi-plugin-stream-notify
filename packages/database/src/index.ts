@@ -3,7 +3,7 @@ import {
   TABLE_STREAM_NOTIFY_NOTIFICATIONS,
   TABLE_STREAM_NOTIFY_FEEDS,
   TABLE_STREAM_NOTIFY_SUBSCRIPTION,
-} from "@koishi-plugin-stream-notify/constrant";
+} from "@stream-notify/constrant";
 
 declare module "koishi" {
   interface Tables {

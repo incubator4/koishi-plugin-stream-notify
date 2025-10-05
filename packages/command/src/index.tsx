@@ -1,5 +1,5 @@
 import { type Context, Command } from "koishi";
-import { TABLE_STREAM_NOTIFY_NOTIFICATIONS } from "@koishi-plugin-stream-notify/constrant";
+import { TABLE_STREAM_NOTIFY_NOTIFICATIONS } from "@stream-notify/constrant";
 
 export interface Config {
   cmd: Command;
@@ -38,6 +38,16 @@ export const apply = (ctx: Context, config: Config) => {
       session_id: "123",
       url: "https://www.baidu.com",
     });
+  });
+
+  config.cmd.subcommand(".jsx").action(({ session }) => {
+    session.send(
+      <>
+        <at id={session.userId} name={session.username} />
+        <p>你好</p>
+        <p>{session.userId}</p>
+      </>
+    );
   });
 };
 

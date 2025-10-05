@@ -1,5 +1,5 @@
 {
-  "name": "@koishi-plugin-stream-notify/workspace",
+  "name": "@stream-notify/workspace",
   "version": "1.0.0",
   "packageManager": "pnpm@10.17.1",
   "scripts": {
@@ -65,7 +65,8 @@
     "@koishijs/plugin-proxy-agent": "^0.3.3",
     "koishi": "4.18.9",
     "koishi-plugin-cron": "3.1.0",
-    "koishi-plugin-stream-notify": "workspace:*"
+    "@stream-notify/koishi-plugin-stream-notify": "workspace:*",
+    "@stream-notify/koishi-plugin-stream-feed-bilibili": "workspace:*"
   },
   "peerDependencies": {
     "koishi": "^4.18.7"

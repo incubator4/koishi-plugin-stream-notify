@@ -1,5 +1,5 @@
 {
-  "name": "@koishi-plugin-stream-notify/feed-bilibili",
+  "name": "@stream-notify/koishi-plugin-stream-feed-bilibili",
   "version": "1.0.0",
   "packageManager": "pnpm@10.17.1",
   "dependencies": {

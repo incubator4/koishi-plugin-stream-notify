@@ -72,4 +72,5 @@ plugins:
     hmr:5q7lsj:
       root: .
     cron:u460sl: {}
-    stream-notify:jptn5z: {}
+    '@stream-notify/stream-notify:jptn5z': {}
+    '@stream-notify/stream-feed-bilibili:jirm9a': {}

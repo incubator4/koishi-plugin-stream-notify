@@ -3,7 +3,7 @@ import {
   EVENT_STREAM_NOTIFY_LIVE_START,
   EVENT_STREAM_NOTIFY_LIVE_END,
   EVENT_STREAM_NOTIFY_DYNAMIC,
-} from "@koishi-plugin-stream-notify/constrant";
+} from "@stream-notify/constrant";
 
 declare module "koishi" {
   interface Events {

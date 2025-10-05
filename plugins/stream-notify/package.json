@@ -1,5 +1,5 @@
 {
-  "name": "koishi-plugin-stream-notify",
+  "name": "@stream-notify/koishi-plugin-stream-notify",
   "version": "0.1.0",
   "description": "",
   "peerDependencies": {

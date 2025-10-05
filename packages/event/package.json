@@ -1,5 +1,5 @@
 {
-  "name": "@koishi-plugin-stream-notify/event",
+  "name": "@stream-notify/event",
   "version": "1.0.0",
   "type": "module",
   "description": "",
